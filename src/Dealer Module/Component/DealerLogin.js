@@ -40,7 +40,7 @@ export class DealerLogin extends Component {
         console.log('login => ' + JSON.stringify(login));
         if(this.state.answer === "Login Successfull"){
             alert("LOGIN SUCCESSFUL :)")
-            e.href='//viewConnections'
+           // e.href='//viewConnections'
            // this.props.history.push('/viewConnections');
         }
     }

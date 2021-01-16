@@ -31,7 +31,7 @@ const HeaderComponent = () =>
                             <Link to="/dealer"class="nav-link" >Dealer</Link>
                             </li>
                             <li class="nav-item">
-                            <Link to="/staff" class="nav-link">Staff Delivery</Link>
+                            <Link to="/stafflogin" class="nav-link">Staff Delivery</Link>
                             </li>
                         </ul>
                     </div>

@@ -1,0 +1,15 @@
+.tableposition{
+    margin-left: 10px;
+}
+.position{
+    margin-top: 10px;
+    margin-bottom: 50px;
+
+}
+.table{
+    width: 1500px;
+    
+}
+.first:hover{
+    background-color:rgb(250, 109, 53)
+}
