@@ -1,0 +1,35 @@
+
+backgroundimage{
+
+    background-image: url("../Component/about1.jpg");
+    height: 500px;
+    margin-top: 0px;
+}
+.img{
+    margin-top: 100px;
+}
+.cardcontent{
+    margin-left: 350px;
+    background-color: thistle;
+    height: 300px;
+    width: 500px;
+}
+#main_content {
+    background-image: url("../Component/about2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 1600px;
+    height: 800px;
+    background-color: #2185C5;
+   
+  }
+  .top-left {
+    background-color: rgb(43, 4, 43);
+    color: wheat;
+    width: 500px;
+    height: 350px;
+    float: right;
+    margin-right: 125px;
+    margin-top:100px;
+  }
+  

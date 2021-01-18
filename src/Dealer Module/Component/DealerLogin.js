@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import LoginImage from './Login Image.png'
-import { history } from 'react-router-dom'
-import DealerService from '../Service/DealerService';
+import LoginImage from '../Images/Login Image.png'
+import { Link} from 'react-router-dom'
+import axios from 'axios';
 
 export class DealerLogin extends Component {
 
@@ -14,7 +14,9 @@ export class DealerLogin extends Component {
           password: "",
           answer:"",
           showName: false
+          
         };
+        this.loginSubmit=this.loginSubmit.bind(this);
     
       }
     
@@ -30,45 +32,26 @@ export class DealerLogin extends Component {
             password:e.target.value
           })
       }
-      loginSubmit = (e) => {
-        //e.preventDefault();
-    
-        let login = {pancardNumber: this.state.pancardNumber,password: this.state.password};
-        console.log('login => ' + JSON.stringify(login));
-        DealerService.login(login)
-        .then((response)=>{this.setState({answer:response.data})});
-        console.log('login => ' + JSON.stringify(login));
-        if(this.state.answer === "Login Successfull"){
-            alert("LOGIN SUCCESSFUL :)")
-           // e.href='//viewConnections'
-           // this.props.history.push('/viewConnections');
-        }
-    }
-    /*{
-        e.preventDefault();
-        let login = {pancardNumber: this.state.pancardNumber,password: this.state.password};
-        console.log('login => ' + JSON.stringify(login));
-        DealerService.login(login)
-        .then(function (response) {
-            if(response.status == 200){
-             this.props.history.push('/viewConnections');   
-             //e.href="/viewConnections";
-            console.log("Login successfull");
+
+      loginSubmit = (e) => 
+      {
+       e.preventDefault();
+
+        axios.get('http://localhost:8080/dealers/login/'+this.state.pancardNumber+'/'+this.state.password)
+        .then(function(response){
+            let that=this;
+            if(response.status === 200){
+                window.open("/menu1","_self");  
             }
             else{
             console.log("Username does not exists");
-            alert("Username does not exist");
-            }
-            }
-            )
-            .catch(function (error) {
-            console.log(error);
-            alert("Username or Password is Invalid :(");
-           
-            });
-            }
-           */
-        
+                    alert("Username does not exists")
+            }}).catch(function(error){
+            alert("Pancard number or Password is invalid");
+                    console.log(error);
+                   
+                });
+        }
 
     render() {
         return (
@@ -83,6 +66,7 @@ export class DealerLogin extends Component {
                                 </div>
                             </div>
                             <div class="col-lg-6">
+                                <form method="POST" onSubmit={this.loginSubmit}>
                                 <div class="card2 card border-0 px-4 py-5">
                                     <label><h5> Dealer Login </h5></label>
                                     <div class="row px-3"><label class="mb-1">
@@ -94,11 +78,12 @@ export class DealerLogin extends Component {
                                     </label><input class="mb-4" type="password" name="password" placeholder="Enter password" onChange={this.changePasswordHandler.bind(this)}></input>
                                     </div>
                                     <div class="row px-3 mb-3">
-                                        <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>
+                                       
                                     </div>
-                                    <div class="row mb-6 px-3"> <a href="/menu"><button href=""type="submit" onClick={this.loginSubmit} class="btn btn-blue text-center">Login</button> </a></div>
-                                    <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <a class="text-danger " href="/dealerregister">Register</a></small> </div>
+                                    <div class="row mb-6 px-3"><button type="submit" class="mybutton btn btn-blue text-center">Login</button></div>
+                                    <div class="row mb-4 px-3"> <small class="font-weight-bold">Don't have an account? <Link class="text-danger " to="/dealerregister">Register</Link></small> </div>
                                 </div>
+                                </form>
                             </div>
                         </div>
                         <div class="bg-blue py-1">

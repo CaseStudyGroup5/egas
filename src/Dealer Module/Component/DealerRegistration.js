@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../Css/registration_style.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import DealerService from '../Service/DealerService'
+import { Link } from 'react-router-dom'
 export class DealerRegistration extends Component{
 
 
@@ -174,7 +175,8 @@ export class DealerRegistration extends Component{
             DealerService.dealerRegistration(dealer)
                  alert(`Registration for Pan number: ${this.state.pancardNumber} is successful.`);
             }
-        }  
+        }
+      
     };
     render() {
     return(
@@ -302,7 +304,8 @@ export class DealerRegistration extends Component{
                         <div>&nbsp;</div>
                         <button  class="btn btn-blue text-center"
                                  onClick={this.registerDealer}> Register </button>
-                        
+                        <div class="row mb-4 px-3"> <small class="font-weight-bold">Already have an account? 
+                        <Link class="text-danger " to="/dealerlogin">Login</Link></small> </div>
                     </div>
                 </div>       
             </div>          

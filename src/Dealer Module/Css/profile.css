@@ -1,0 +1,36 @@
+.l1{
+    margin-left: 25px;
+}
+.l2{
+    margin-left: 65px;
+}
+.l3{
+    margin-left: 65px;
+}
+.l4{
+    margin-left: 87px;
+}
+.l5{
+    margin-left: 83px;
+}
+.l6{
+    margin-left: 25px;
+}
+.l7{
+    margin-left: 115px;
+}
+.l8{
+    margin-left: 105px;
+}
+.mycard{
+    background-image: url("../Images//imgbg4.jpg");
+    text-align: center;
+    color: white;
+}
+.mybutton{
+    background-color:rgb(4, 4, 78);
+    color: white;
+}
+.mybutton:hover{
+    color:tan
+}

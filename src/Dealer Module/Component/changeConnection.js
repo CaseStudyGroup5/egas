@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css'
+import '../Css/table.css'
 import DealerService from '../Service/DealerService';
 
 
@@ -74,11 +74,12 @@ DealerService.changeConnectionStatus(this.state.data);
 <div className="position">
     <h1>New Connections Details</h1>
 </div>
-<div className="tableposition">
-<table class="table table-striped " >
-    <thead class="table-dark">
+
+
+<table cellpadding="0" cellspacing="0" border="1" >
+    <thead class="tbl-header">
         <tr>
-            <th>Panacrd</th>
+            <th>Pancard</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>State</th>
@@ -87,8 +88,12 @@ DealerService.changeConnectionStatus(this.state.data);
             <th>Contact Number</th>
             <th>Action</th>
         </tr>
-    </thead>
-    <tbody class="table-info">
+        </thead>
+        
+      
+        
+   
+    <tbody class="tbl-content">
     {
          this.state.customers.map(
             customer => 
@@ -101,19 +106,19 @@ DealerService.changeConnectionStatus(this.state.data);
              <td> {customer.custAddress}</td>
              <td> {customer.custContact}</td>
              <td>
-             <button type="button" class="btn btn-success " onSubmit={this.stopSubmission.bind(this)} onClick={ () => this.approveCustomer(customer.custPancard)}>Approve</button>
-             <button type="button" class="btn btn-danger" onSubmit={this.stopSubmission.bind(this)}  onClick={ () => this.disapproveCustomer(customer.custPancard)}>DisApprove</button>
+             <button type="button" class="button-green" onSubmit={this.stopSubmission.bind(this)} onClick={ () => this.approveCustomer(customer.custPancard)}>Approve</button>
+             <button type="button" class="button-red" onSubmit={this.stopSubmission.bind(this)}  onClick={ () => this.disapproveCustomer(customer.custPancard)}>Disapprove</button>
+             
               </td>
            
              </tr>
     )
     }
     </tbody>
-</table>
-</div>
-<div>
+    </table>
 
-</div>
+
+
 
         </div>
       );

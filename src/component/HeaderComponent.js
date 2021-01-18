@@ -8,7 +8,7 @@ const HeaderComponent = () =>
         <div>
             <nav class="navbar navbar-expand-lg ">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="# ">Online EGas</a>
+                    <a class="navbar-brand" href="# ">BharatGas Booking</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -25,10 +25,10 @@ const HeaderComponent = () =>
                             <Link to="/admin" class="nav-link">Admin</Link>
                             </li>
                             <li class="nav-item">
-                            <Link to="/customer" class="nav-link">Customer</Link>
+                            <Link to="/customerlogin" class="nav-link">Customer</Link>
                             </li>
                             <li class="nav-item">
-                            <Link to="/dealer"class="nav-link" >Dealer</Link>
+                            <Link to="/dealerlogin" class="nav-link" >Dealer</Link>
                             </li>
                             <li class="nav-item">
                             <Link to="/stafflogin" class="nav-link">Staff Delivery</Link>

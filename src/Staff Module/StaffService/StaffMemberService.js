@@ -29,7 +29,6 @@ class StaffMemberService {
     changeAccessoriesDeliveryStatus(data){
         return axios.patch(STAFF_API_BASE_URL+'/updateAccessoriesDeliveryStatus',data)
     }
-
 }
 
 export default new StaffMemberService()

@@ -142,3 +142,6 @@ a {
     margin-bottom: 0.8rem;
     color: #df0303;
   }
+  .mybutton:hover{
+    color:tan
+}
